@@ -459,11 +459,15 @@ public class mainUI extends javax.swing.JFrame {
     * @param args the command line arguments
     */
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new mainUI().setVisible(true);
-            }
-        });
+        if ( args.length > 0 ) {
+            System.exit((new cmdLineApp()).run(args));
+        } else {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new mainUI().setVisible(true);
+                }
+            });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
